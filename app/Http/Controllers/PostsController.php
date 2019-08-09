@@ -100,7 +100,7 @@ class PostsController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        $data = $request->only(['title', 'description', 'published_at', 'content']);
+        $data = $request->only(['title', 'description', 'published_at', 'content','category_id' => $request->category,]);
         // check if new image
         if ($request->hasFile('image')) {
           // uplload it
